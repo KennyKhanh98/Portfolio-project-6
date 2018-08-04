@@ -1,7 +1,7 @@
 const qwerty = document.getElementById('qwerty');
 const phrase = document.getElementById('phrase');
 const overlay = document.getElementById('overlay');
-const startButton = overlay.querySelector('.btn__reset');
+const startButton = document.querySelector('.btn__reset');
 const keyrowButton = document.getElementsByClassName('.keyrow button');
 const ulList = document.querySelector('#phrase ul');
 const listPhrase = document.getElementById('list');
