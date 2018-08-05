@@ -4,8 +4,7 @@ const overlay = document.getElementById('overlay');
 const startButton = document.querySelector('.btn__reset');
 const keyrowButton = document.getElementsByClassName('.keyrow button');
 const ulList = document.querySelector('#phrase ul');
-// const list = phrase.querySelector('ul');
-const listElement = phrase.querySelectorAll('li');
+const listElement = document.querySelectorAll('ul li');
 const letterClass = document.getElementsByClassName('letter');
 const showClass = document.getElementsByClassName('show');
 const title = document.querySelector('.title');
@@ -49,10 +48,10 @@ function addPhraseToDisplay(arr){
 let phraseArray = getRandomPhraseAsArray(phrases);
 addPhraseToDisplay(phraseArray);
 
-function checkLetter(button) {
+function checkLetter(e) {
   let found = null;
   for (let i = 0; i < letterClass.length; i++) {
-    if (button.textContent === letterClass[i].textContent) {
+    if (e.target.textContent === letterClass[i].textContent) {
       found = true;
       letterClass[i].classList.add("show");
     }
@@ -65,12 +64,12 @@ function checkWin() {
     overlay.style.display = 'flex';
     overlay.classList.add("win");
     title.textContent = 'Congratulations on winning!';
-    startButton.textContent = 'Play again';
+    startButton.textContent = "Play again";
   } else if (missed >= 5) {
     overlay.style.display = 'flex';
     overlay.classList.add("lose");
     title.textContent = 'Better luck next time';
-    startButton.textContent = 'Play again';
+    startButton.textContent = "Play again";
   }
 }
 
@@ -78,10 +77,10 @@ qwerty.addEventListener('click', (e) => {
   if (e.target.tagName === 'BUTTON') {
     e.target.classList.add("chosen");
     e.target.setAttribute("disabled", true);
-    const letterFound = checkLetter(e.target);
+    const letterFound = checkLetter(e);
     if (letterFound === null) {
-      let addMissed = missed;
-      hearts[addMissed].setAttribute('src', 'images/lostHeart.png');
+      let currentMissed = missed;
+      hearts[currentMissed].setAttribute('src', 'images/lostHeart.png');
       missed += 1;
     }
   }
@@ -90,7 +89,6 @@ qwerty.addEventListener('click', (e) => {
 
 startButton.addEventListener('click', (e) => {
   if (e.target.textContent === 'Play again') {
-    overlay.style.display = 'none';
     missed = 0;
 
     // Reset hearts
