@@ -7,7 +7,7 @@ const ulList = document.querySelector('#phrase ul');
 const letterClass = document.getElementsByClassName('letter');
 const showClass = document.getElementsByClassName('show');
 const title = document.querySelector('.title');
-const hearts = document.querySelectorAll('.tries');
+const hearts = document.querySelectorAll('.tries img');
 
 let missed = 0;
 
@@ -64,7 +64,7 @@ function checkWin() {
     overlay.classList.add("win");
     title.textContent = 'Congratulations on winning!';
     startButton.textContent = "Play again";
-  } else if (missed >= 5) {
+  } else if (missed === 5) {
     overlay.style.display = 'flex';
     overlay.classList.add("lose");
     title.textContent = 'Better luck next time';
@@ -77,7 +77,6 @@ qwerty.addEventListener('click', (e) => {
     e.target.classList.add("chosen");
     e.target.setAttribute("disabled", true);
     const letterFound = checkLetter(e);
-    console.log(letterFound);
     if (letterFound === null) {
       let currentMissed = missed;
       hearts[currentMissed].setAttribute('src', 'images/lostHeart.png');
