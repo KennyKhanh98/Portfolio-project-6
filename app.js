@@ -2,7 +2,7 @@ const qwerty = document.getElementById('qwerty');
 const phrase = document.getElementById('phrase');
 const overlay = document.getElementById('overlay');
 const startButton = document.querySelector('.btn__reset');
-const keyrowButton = document.getElementsByClassName('.keyrow button');
+const keyrowButton = document.querySelectorAll('.keyrow button');
 const ulList = document.querySelector('#phrase ul');
 const letterClass = document.getElementsByClassName('letter');
 const showClass = document.getElementsByClassName('show');
@@ -77,6 +77,7 @@ qwerty.addEventListener('click', (e) => {
     e.target.classList.add("chosen");
     e.target.setAttribute("disabled", true);
     const letterFound = checkLetter(e);
+    console.log(letterFound);
     if (letterFound === null) {
       let currentMissed = missed;
       hearts[currentMissed].setAttribute('src', 'images/lostHeart.png');
@@ -104,7 +105,7 @@ startButton.addEventListener('click', (e) => {
     // Reset button's attributes
     for (let i = 0; i < keyrowButton.length; i++) {
       keyrowButton[i].classList.remove("chosen");
-      keyrowButton[i].setAttribute("disabled", false);
+      keyrowButton[i].disabled = false;
     }
 
     // Add new phrase
