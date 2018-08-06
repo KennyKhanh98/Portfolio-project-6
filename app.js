@@ -98,7 +98,7 @@ startButton.addEventListener('click', (e) => {
     // Delete last guessed word
     const listElement = document.querySelectorAll('ul li');
     for (let i = 0; i < listElement.length; i++) {
-      ulList.removeChild(listElement);
+      ulList.removeChild(listElement[i]);
     }
 
     // Reset button's attributes
