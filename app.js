@@ -4,7 +4,6 @@ const overlay = document.getElementById('overlay');
 const startButton = document.querySelector('.btn__reset');
 const keyrowButton = document.getElementsByClassName('.keyrow button');
 const ulList = document.querySelector('#phrase ul');
-const listElement = document.querySelectorAll('ul li');
 const letterClass = document.getElementsByClassName('letter');
 const showClass = document.getElementsByClassName('show');
 const title = document.querySelector('.title');
@@ -97,6 +96,7 @@ startButton.addEventListener('click', (e) => {
     }
 
     // Delete last guessed word
+    const listElement = document.querySelectorAll('ul li');
     for (let i = 0; i < listElement.length; i++) {
       ulList.removeChild(listElement);
     }
