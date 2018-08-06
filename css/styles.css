@@ -78,7 +78,7 @@ button {
 /* Scoreboard */
 
 .tries {
-  background-image: url('../images/liveHeart.png');
+  background-image: url('../images/liveHeart.png') no-repeat;
 }
 
 /* Phrase */
@@ -92,6 +92,7 @@ button {
   color: transparent;
   background: var(--color-neutral-light);
   border-radius: 5px;
+  transition: 1s;
 }
 
 .space {
@@ -123,6 +124,7 @@ button {
   background: #FFFFFF;
   border-radius: 5px;
   font-size: var(--font-size-medium);
+  cursor: pointer;
 }
 
 /* Overlay */
