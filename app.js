@@ -15,7 +15,12 @@ const phrases = ['i love you',
                   'life is short',
                   'thank you',
                   'my sunshine',
-                  'every moment matters'];
+                  'every moment matters',
+                  'you are amazing',
+                  'change the world by being yourself',
+                  'just do it',
+                  'it hurts because it mattered',
+                  'turn your wounds into wisdom'];
 
 startButton.addEventListener('click', () => {
   overlay.style.display = 'none';
