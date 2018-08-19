@@ -17,7 +17,6 @@ const phrases = ['i love you',
                   'my sunshine',
                   'every moment matters',
                   'you are amazing',
-                  'change the world by being yourself',
                   'just do it',
                   'it hurts because it mattered',
                   'turn your wounds into wisdom'];
